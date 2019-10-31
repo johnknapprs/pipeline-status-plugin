@@ -18,10 +18,11 @@ jobs:
     - name: Build & Test with Gradle
       run: gradle clean build
 
-    - name: Execute Danger
+    - name: Setup Ruby
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6
+    - name: Execute Danger
       run:
         - gem install danger
         - bundle exec danger
