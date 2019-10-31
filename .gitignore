@@ -13,3 +13,7 @@ gradle
 .factorypath
 .vscode
 bin/main/index.jelly
+
+# Danger ignores
+Gemfile.lock
+rspec_junit.xml

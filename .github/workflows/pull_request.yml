@@ -22,11 +22,15 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6
-    - name: Install Danger
-      run: gem install danger
-    
+
+    - name: Install Bundler
+      run: gem install bundler
+
+    - name: Install Danger & Plugins
+      run: bundle install
+
     - name: Execute Danger
-      run: bundle exec danger
+      run: danger
       env:
         DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
         PARALLEL_DOTS_API_KEY: ${{secrets.PARALLEL_DOTS_API_KEY}}
